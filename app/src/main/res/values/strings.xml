@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RxJavaSample</string>
+    <string name="ghibli_films">Ghibli Films</string>
 </resources>

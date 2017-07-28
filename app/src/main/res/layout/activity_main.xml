@@ -1,18 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.eastagile.rxjavasample.MainActivity">
+    android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/tv_city_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/spacing_huge"
+        android:text="Saigon"
+        android:textAllCaps="true"
+        android:textSize="@dimen/font_sub_head"
+        android:textStyle="bold" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_current_date_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_city_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/spacing_large"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:text="TUESDAY 09:00 AM"
+        android:textAllCaps="true"
+        android:textSize="@dimen/font_body" />
+
+    <ImageView
+        android:id="@+id/img_weather_status"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/tv_current_date_time"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/spacing_huge" />
+
+    <TextView
+        android:id="@+id/tv_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_weather_status"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:text="35°C"
+        android:textAllCaps="true"
+        android:textSize="@dimen/font_display_1"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_weather_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_temperature"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/spacing_tiny"
+        android:text="Rain Shower"
+        android:textAllCaps="true"
+        android:textSize="@dimen/font_body" />
+
+    <View
+        android:id="@+id/view_seperator"
+        android:layout_width="25dp"
+        android:layout_height="1dp"
+        android:layout_below="@id/tv_weather_status"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:background="#585858" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_seperator"
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/container_sunrise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_icon_sunrise"
+                android:layout_width="32dp"
+                android:layout_height="32dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_tiny"
+                android:text="Sunrise"
+                android:textAllCaps="true"
+                android:textSize="@dimen/font_caption" />
+
+            <TextView
+                android:id="@+id/tv_sunrise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_tiny"
+                android:text="6.00"
+                android:textAllCaps="true"
+                android:textSize="@dimen/font_caption" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_wind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_icon_wind"
+                android:layout_width="32dp"
+                android:layout_height="32dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_tiny"
+                android:text="Wind"
+                android:textAllCaps="true"
+                android:textSize="@dimen/font_caption" />
+
+            <TextView
+                android:id="@+id/tv_wind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_tiny"
+                android:text="10m/s"
+                android:textAllCaps="true"
+                android:textSize="@dimen/font_caption" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginStart="@dimen/spacing_normal"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_icon_temperature"
+                android:layout_width="32dp"
+                android:layout_height="32dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_tiny"
+                android:text="Temperature"
+                android:textAllCaps="true"
+                android:textSize="@dimen/font_caption" />
+
+            <TextView
+                android:id="@+id/tv_temperature_average"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_tiny"
+                android:text="35°C"
+                android:textAllCaps="true"
+                android:textSize="@dimen/font_caption" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
